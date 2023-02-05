@@ -12,17 +12,18 @@ class PlantNursery{
     PlantNursery(){used = 0;}
 
     void load_from_file(std::istream& ifs);
-    void show_all(std::ostream& outs);
+    void show_all(std::ostream& outs) const;
     void add_plant(std::istream& ins);
     void remove(std::string pName, std::string pColor);
     void change_stock_amt(std::string pName, std::string pColor, int amt);
     void name_sort();
     void date_sort();
     void stock_sort();
-    void show_plants(std::string p_color);
+    void show_plants(std::string p_color) const;
     void show_before(Date before_date) const;
     void show_colors(std::string p_name) const;
     double average();
+    void save(std::ostream& ofs);
     
 
     private:

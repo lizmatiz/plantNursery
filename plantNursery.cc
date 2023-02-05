@@ -12,7 +12,7 @@ void PlantNursery::load_from_file(std::istream& ifs){
     }
 }
 
-void PlantNursery::show_all(std::ostream& outs){
+void PlantNursery::show_all(std::ostream& outs) const{
     for (int i = 0; i < used; i++){
         plantArr[i].output(outs);
     }
@@ -128,7 +128,7 @@ void PlantNursery::stock_sort(){
     }
 }
 
-void PlantNursery::show_plants(std::string p_color){
+void PlantNursery::show_plants(std::string p_color) const{
     cout << endl;
     int total = 0;
     for(int i = 0; i < used; i++){
@@ -168,4 +168,10 @@ double PlantNursery::average(){
         total++;
     }
     return sum/total;
+}
+
+void PlantNursery::save(std::ostream& ofs){
+    for(int i = 0; i < used; i++){
+        plantArr[i].output(ofs);
+    }
 }

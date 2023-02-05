@@ -128,7 +128,7 @@ int main(){
 
 	ofs.open(in_file.c_str());
 	if(!ofs.fail()){
-		//myplants.save(ofs);
+		myplants.save(ofs);
 	    ofs.close();
 	}
 
