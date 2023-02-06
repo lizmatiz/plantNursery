@@ -22,6 +22,8 @@ void Plant::input(std::istream& ins){
 	/* You are to write the implementation of this function to read 
 	from the keyboard or a file. Remember to use getline to read the 
 	pay to.  */
+
+	// if the input stream matches cin, then get input from the input stream (with prompts)
 	if(&ins == &std::cin){
 		cout << "Enter the plant name: " << endl;
 		while(ins.peek()=='\n'){
@@ -42,21 +44,19 @@ void Plant::input(std::istream& ins){
 		ins >> stock;
 
 	}
+
+	// if the input stream does not match cin, the get input from the input stream (without prompts)
 	else{
 		while(ins.peek()=='\n'){
 			ins.ignore();
 		}
 		getline(ins, name);
-		cout << name << endl;
 		getline(ins, color);
-		cout << color << endl;
 		while(ins.peek()=='\n'){
 			ins.ignore();
 		}
 		ins >> cameIn;
-		cout << cameIn << endl;
 		ins >> stock;
-		cout << stock << endl;
 				while(ins.peek()=='\n'){
 			ins.ignore();
 		}
@@ -67,6 +67,8 @@ void Plant::output(std::ostream& outs)const{
 	/* You are to write the implementation of this function to write 
 	to the monitor or to a file. Remember not to put labels into the 
 	file.*/
+
+	// if the output stream matches cout, then output with labels
 	if(&outs == &std::cout){
 		outs << "Plant name: " << name << endl;
 		outs << "Plant color: " << color << endl;
@@ -74,6 +76,8 @@ void Plant::output(std::ostream& outs)const{
 		outs << "Stock: " << stock << endl << endl;
 
 	}
+
+	// if the output stream does not match cout, then output without prompts
 	else{
 		outs << name << endl;
 		outs << color << endl;

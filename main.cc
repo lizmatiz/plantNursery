@@ -24,7 +24,6 @@ using namespace std;
 
 /* This function shows the user the menu, asks them to enter their 
 choice and then returns the integer value of that choice. */
-
 int menu();
 
 int main(){
