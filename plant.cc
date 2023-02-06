@@ -22,7 +22,7 @@ void Plant::input(std::istream& ins){
 	/* You are to write the implementation of this function to read 
 	from the keyboard or a file. Remember to use getline to read the 
 	pay to.  */
-	if(ins == cin){
+	if(&ins == &std::cin){
 		cout << "Enter the plant name: " << endl;
 		while(ins.peek()=='\n'){
 			ins.ignore();
@@ -67,7 +67,7 @@ void Plant::output(std::ostream& outs)const{
 	/* You are to write the implementation of this function to write 
 	to the monitor or to a file. Remember not to put labels into the 
 	file.*/
-	if(outs == cout){
+	if(&outs == &std::cout){
 		outs << "Plant name: " << name << endl;
 		outs << "Plant color: " << color << endl;
 		outs << "Date the plant came in: " << cameIn << endl;
